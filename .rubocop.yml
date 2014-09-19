@@ -1,0 +1,12 @@
+Metrics/LineLength:
+  Max: 100
+
+Style/Documentation:
+  Description: 'Document classes and non-namespace modules.'
+  Enabled: false
+
+Style/RegexpLiteral:
+  MaxSlashes: 0
+
+Style/SignalException:
+  EnforcedStyle: only_raise

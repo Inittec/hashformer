@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.authors       = ['Krzysztof Buszewicz']
   s.email         = ['krzysztof.buszewicz@gmail.com']
   s.summary       = 'Simple Hash Transformer'
-  s.homepage      = ''
+  s.homepage      = 'https://github.com/Inittec/hashformer'
   s.license       = 'MIT'
 
   s.files         = `git ls-files -z`.split("\x0")

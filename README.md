@@ -21,7 +21,7 @@ Here are some examples of Hashformer usage.
 ### 1. Renaming keys with mappings
 #### Simple Sample
 Lets assume that you have following hash in your application:
-```
+```ruby
 hash = { name: "Barrack", surname: "Obama", street: "1600 Pennsylvania Avenue", town: "Washington", postal_code: "20500", country: "United States" }
 ```
 
@@ -33,12 +33,12 @@ You want to rename keys with this rules:
 * the rest is OK.
  
 So, create mappings:
-```
+```ruby
 mappings = { name: :first_name, surname: :last_name, town: :city, postal_code: :zip_code }
 ```
 
 Then, instantiate transformer with created mappings:
-```
+```ruby
 t = Hash::Transformer.new(mappings)
 ```
 
@@ -51,7 +51,7 @@ t.transform(hash)
 ```
 #### Nested hashes
 That was easy, what about nested hashes? Let's try with this one:
-```
+```ruby
 hash = { name: "Barrack", surname: "Obama", address_data: { street: "1600 Pennsylvania Avenue", town: "Washington", postal_code: "20500", country: "United States" } }
 ```
 Now, your quest is to rename keys as previously, plus: `:addres_data` should be changed to `address`. 3 - 2 - 1...
@@ -74,7 +74,7 @@ t.transform(hash)
 => {:first_name=>"Barrack", :last_name=>"Obama", :address=>{:street=>"1600 Pennsylvania Avenue", :city=>"Washington", :zip_code=>"20500", :country=>"United States"}} 
 ```
 Much better. Yo can also instantiate "deep transformers" by passing `:deep` symbol to the constructor:
-```
+```ruby
 t = Hash::Transformer.new(mappings, :deep)
 ```
 ### 2. Custom mapping actions
